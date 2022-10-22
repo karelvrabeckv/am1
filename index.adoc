@@ -1,6 +1,6 @@
 = Homework 
 
-* xref:01/index#[]
+* xref:01/README.md[]
 * xref:02/index#[]
 * xref:03/index#[]
 * xref:04/index#[]
