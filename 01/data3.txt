@@ -1,0 +1,12 @@
+Dear Sir or Madam,
+
+please find the details about my booking below:
+
+===
+Tour id: "485"
+Location: "New York"
+Person: "Petr Svoboda"
+===
+
+Regards,
+Petr Svoboda
