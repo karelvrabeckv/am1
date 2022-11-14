@@ -1,0 +1,185 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="https://courses.fit.cvut.cz/NI-AM1/tutorials/02/index.html"
+           targetNamespace="https://courses.fit.cvut.cz/NI-AM1/tutorials/02/index.html" elementFormDefault="qualified">
+
+    <!-- get bookings request -->
+    <xs:element name="getBookingsRequest">
+        <xs:complexType>
+            <xs:sequence/>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- get bookings response -->
+    <xs:element name="getBookingsResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="tns:bookingWithId" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- add booking request -->
+    <xs:element name="addBookingRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="tns:bookingWithoutId"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- add booking response -->
+    <xs:element name="addBookingResponse">
+        <xs:complexType>
+            <xs:sequence/>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- update booking request -->
+    <xs:element name="updateBookingRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="tns:optionalBookingWithId"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- update booking response -->
+    <xs:element name="updateBookingResponse">
+        <xs:complexType>
+            <xs:sequence/>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- delete booking request -->
+    <xs:element name="deleteBookingRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="tns:id"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- delete booking response -->
+    <xs:element name="deleteBookingResponse">
+        <xs:complexType>
+            <xs:sequence/>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- definition of simple elements -->
+    <xs:element name="bookingWithoutId" type="tns:bookingWithoutId"/>
+    <xs:element name="bookingWithId" type="tns:bookingWithId"/>
+
+    <xs:element name="optionalBookingWithoutId" type="tns:optionalBookingWithoutId"/>
+    <xs:element name="optionalBookingWithId" type="tns:optionalBookingWithId"/>
+
+    <xs:element name="id" type="xs:int"/>
+    <xs:element name="travelClass" type="tns:travelClass"/>
+
+    <xs:element name="name" type="xs:string"/>
+    <xs:element name="surname" type="xs:string"/>
+    <xs:element name="sex" type="tns:sex"/>
+    <xs:element name="birthDate" type="xs:date"/>
+    <xs:element name="birthPlace" type="xs:string"/>
+    <xs:element name="personalNumber" type="tns:personalNumber"/>
+
+    <xs:element name="departureDateTime" type="xs:dateTime"/>
+    <xs:element name="departureAirportCode" type="tns:airportCode"/>
+
+    <xs:element name="arrivalDateTime" type="xs:dateTime"/>
+    <xs:element name="arrivalAirportCode" type="tns:airportCode"/>
+
+    <!-- definition of simple types -->
+    <xs:simpleType name="sex">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="M"/>
+            <xs:enumeration value="F"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="personalNumber">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{6}/[0-9]{4}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="travelClass">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="First"/>
+            <xs:enumeration value="Business"/>
+            <xs:enumeration value="Economy"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="airportCode">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="PRG"/>
+            <xs:enumeration value="OSR"/>
+            <xs:enumeration value="KLV"/>
+            <xs:enumeration value="BTS"/>
+            <xs:enumeration value="VIE"/>
+            <xs:enumeration value="CDG"/>
+            <xs:enumeration value="FRA"/>
+            <xs:enumeration value="MUC"/>
+            <xs:enumeration value="JFK"/>
+            <xs:enumeration value="LAX"/>
+            <xs:enumeration value="LHR"/>
+            <xs:enumeration value="LGW"/>
+            <xs:enumeration value="STN"/>
+            <xs:enumeration value="LTN"/>
+            <xs:enumeration value="DXB"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- definition of complex types -->
+    <xs:complexType name="bookingWithoutId">
+        <xs:sequence>
+            <xs:element ref="tns:travelClass"/>
+
+            <xs:element ref="tns:name"/>
+            <xs:element ref="tns:surname"/>
+            <xs:element ref="tns:sex"/>
+            <xs:element ref="tns:birthDate"/>
+            <xs:element ref="tns:birthPlace"/>
+            <xs:element ref="tns:personalNumber"/>
+
+            <xs:element ref="tns:departureDateTime"/>
+            <xs:element ref="tns:departureAirportCode"/>
+
+            <xs:element ref="tns:arrivalDateTime"/>
+            <xs:element ref="tns:arrivalAirportCode"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="bookingWithId">
+        <xs:sequence>
+            <xs:element ref="tns:id"/>
+            <xs:element ref="tns:bookingWithoutId"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="optionalBookingWithoutId">
+        <xs:sequence>
+            <xs:element ref="tns:travelClass" minOccurs="0"/>
+
+            <xs:element ref="tns:name" minOccurs="0"/>
+            <xs:element ref="tns:surname" minOccurs="0"/>
+            <xs:element ref="tns:sex" minOccurs="0"/>
+            <xs:element ref="tns:birthDate" minOccurs="0"/>
+            <xs:element ref="tns:birthPlace" minOccurs="0"/>
+            <xs:element ref="tns:personalNumber" minOccurs="0"/>
+
+            <xs:element ref="tns:departureDateTime" minOccurs="0"/>
+            <xs:element ref="tns:departureAirportCode" minOccurs="0"/>
+
+            <xs:element ref="tns:arrivalDateTime" minOccurs="0"/>
+            <xs:element ref="tns:arrivalAirportCode" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="optionalBookingWithId">
+        <xs:sequence>
+            <xs:element ref="tns:id"/>
+            <xs:element ref="tns:optionalBookingWithoutId"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
