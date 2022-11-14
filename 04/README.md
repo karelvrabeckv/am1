@@ -1,6 +1,6 @@
 # DÚ 4
 
-Zdrojový kód se nachází ve složce [src](). <br />
+Zdrojový kód se nachází ve složce [src](https://gitlab.fit.cvut.cz/NI-AM1/B221/cs/vrabekar/-/tree/master/04/src/main/java/cz/cvut/fit/niam1/webservice). <br />
 Ukázky jsou k dispozici níže.
 
 ### SoapUI projekt
