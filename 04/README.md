@@ -5,7 +5,7 @@ Ukázky jsou k dispozici níže.
 
 ### SoapUI projekt
 
-V jednotlivých krocích používám asserty na **statové HTTP kódy** a **počet vrácených záznamů**.
+V jednotlivých krocích používám asserty na **statové HTTP kódy** a **počet vrácených záznamů**. <br />
 V testovacím scénáři se nejdříve pokouším přidat **neplatný** a následně **platný** záznam.
 
 ![image](project.png)
