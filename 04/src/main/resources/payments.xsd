@@ -1,0 +1,67 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="https://courses.fit.cvut.cz/NI-AM1/tutorials/web-services/"
+           targetNamespace="https://courses.fit.cvut.cz/NI-AM1/tutorials/web-services/" elementFormDefault="qualified">
+
+    <!-- get payments request -->
+    <xs:element name="getPaymentsRequest">
+        <xs:complexType>
+            <xs:sequence/>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- get payments response -->
+    <xs:element name="getPaymentsResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="tns:paymentWithId" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- add payment request -->
+    <xs:element name="addPaymentRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="tns:paymentWithoutId"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- add payment response -->
+    <xs:element name="addPaymentResponse">
+        <xs:complexType>
+            <xs:sequence/>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- definition of simple elements -->
+    <xs:element name="paymentWithoutId" type="tns:paymentWithoutId"/>
+    <xs:element name="paymentWithId" type="tns:paymentWithId"/>
+
+    <xs:element name="id" type="xs:int"/>
+    <xs:element name="orderId" type="xs:int"/>
+    <xs:element name="cardNumber" type="tns:cardNumber"/>
+    <xs:element name="cardOwner" type="xs:string"/>
+
+    <!-- definition of simple types -->
+    <xs:simpleType name="cardNumber">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- definition of complex types -->
+    <xs:complexType name="paymentWithoutId">
+        <xs:sequence>
+            <xs:element ref="tns:orderId"/>
+            <xs:element ref="tns:cardNumber"/>
+            <xs:element ref="tns:cardOwner"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="paymentWithId">
+        <xs:sequence>
+            <xs:element ref="tns:id"/>
+            <xs:element ref="tns:paymentWithoutId"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
