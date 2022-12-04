@@ -1,0 +1,5 @@
+/tour/last-modified – the cached list of tours
+/tour/weak-etag – the cached list of tours
+/tour/strong-etag – the cached list of tours
+
+/tour/{id} – a specific tour
