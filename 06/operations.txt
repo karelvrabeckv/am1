@@ -1,0 +1,37 @@
+========================================
+/tour – the list of tours
+========================================
+
+HTTP method: GET (read)
+Status codes: 200, 40x, 50x
+Link: /tour/{tid} (detail)
+
+========================================
+/tour/{tid} – a specific tour
+========================================
+
+HTTP method: GET (read)
+Status codes: 200, 40x, 50x
+Link: /tour/{tid} (self)
+Link: /tour (list)
+Link: /tour/{tid} (delete)
+
+HTTP method: DELETE (delete)
+Status codes: 200, 40x, 50x
+
+========================================
+/deletion – the list of deletions
+========================================
+
+HTTP method: GET (read)
+Status codes: 200, 40x, 50x
+Link: /deletion/{did} (detail)
+
+========================================
+/deletion/{did} – a specific deletion
+========================================
+
+HTTP method: GET (read)
+Status codes: 200, 40x, 50x
+Link: /deletion/{did} (self)
+Link: /deletion (list)

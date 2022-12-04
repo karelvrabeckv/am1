@@ -1,0 +1,5 @@
+/tour – the list of tours
+/tour/{tid} – a specific tour
+
+/deletion – the list of deletions
+/deletion/{did} – a specific deletion

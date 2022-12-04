@@ -1,0 +1,20 @@
+/tour – the list of tours
+[{...}, {...}, {...}, ...]
+
+/tour/{tid} – a specific tour
+{
+    id: String,
+    name: String,
+    location: String,
+    customers: String[],
+}
+
+/deletion – the list of deletions
+[{...}, {...}, {...}, ...]
+
+/deletion/{did} – a specific deletion
+{
+    id: String,
+    tourId: String,
+    status: String,
+}
