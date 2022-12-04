@@ -1,0 +1,13 @@
+Server: http://t-a.org (see api-docs.json)
+
+/tour – the list of tours
+/tour/{tid} – a specific tour
+
+/tour/{tid}/customer – the customers of the specific tour
+/tour/{tid}/customer/{cid} – the specific customer of the specific tour
+
+/country – the list of countries
+/country/{cid} – a specific country
+
+/country/{cid}/location – the locations of the specific country
+/country/{cid}/location/{lid} – the specific location of the specific country

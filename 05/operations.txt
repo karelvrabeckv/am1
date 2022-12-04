@@ -1,0 +1,123 @@
+========================================
+/tour – the list of tours
+========================================
+
+HTTP method: GET (read)
+Status codes: 200, 40x, 50x
+Link: /tour/{tid} (detail)
+Link (authorized users only): /tour (create)
+
+HTTP method: POST (create)
+Status codes: 201, 40x, 50x
+Link: /tour/{tid} (location)
+
+========================================
+/tour/{tid} – a specific tour
+========================================
+
+HTTP method: GET (read)
+Status codes: 200, 40x, 50x
+Link: /tour/{tid} (self)
+Link: /tour (list)
+Link (authorized users only): /tour (create)
+Link (authorized users only): /tour/{tid} (update)
+Link (authorized users only): /tour/{tid} (delete)
+
+HTTP method: PUT (update)
+Status codes: 204, 40x, 50x
+
+HTTP method: DELETE (delete)
+Status codes: 204, 40x, 50x
+
+========================================
+/tour/{tid}/customer – the customers of the specific tour
+========================================
+
+HTTP method: GET (read)
+Status codes: 200, 40x, 50x
+Link: /tour/{tid}/customer/{cid} (detail)
+Link (authorized users only): /tour/{tid}/customer (create)
+
+HTTP method: POST (create)
+Status codes: 201, 40x, 50x
+Link: /tour/{tid}/customer/{cid} (location)
+
+========================================
+/tour/{tid}/customer/{cid} – the specific customer of the specific tour
+========================================
+
+HTTP method: GET (read)
+Status codes: 200, 40x, 50x
+Link: /tour/{tid}/customer/{cid} (self)
+Link: /tour/{tid}/customer (list)
+Link (authorized users only): /tour/{tid}/customer (create)
+Link (authorized users only): /tour/{tid}/customer/{cid} (update)
+Link (authorized users only): /tour/{tid}/customer/{cid} (delete)
+
+HTTP method: PUT (update)
+Status codes: 204, 40x, 50x
+
+HTTP method: DELETE (delete)
+Status codes: 204, 40x, 50x
+
+========================================
+/country – the list of countries
+========================================
+
+HTTP method: GET (read)
+Status codes: 200, 40x, 50x
+Link: /country/{cid} (detail)
+Link (authorized users only): /country (create)
+
+HTTP method: POST (create)
+Status codes: 201, 40x, 50x
+Link: /country/{cid} (location)
+
+========================================
+/country/{cid} – a specific country
+========================================
+
+HTTP method: GET (read)
+Status codes: 200, 40x, 50x
+Link: /country/{cid} (self)
+Link: /country (list)
+Link (authorized users only): /country (create)
+Link (authorized users only): /country/{cid} (update)
+Link (authorized users only): /country/{cid} (delete)
+
+HTTP method: PUT (update)
+Status codes: 204, 40x, 50x
+
+HTTP method: DELETE (delete)
+Status codes: 204, 40x, 50x
+
+========================================
+/country/{cid}/location – the locations of the specific country
+========================================
+
+HTTP method: GET (read)
+Status codes: 200, 40x, 50x
+Link: /country/{cid}/location/{lid} (detail)
+Link (authorized users only): /country/{cid}/location (create)
+
+HTTP method: POST (create)
+Status codes: 201, 40x, 50x
+Link: /country/{cid}/location/{lid} (location)
+
+========================================
+/country/{cid}/location/{lid} – the specific location of the specific country
+========================================
+
+HTTP method: GET (read)
+Status codes: 200, 40x, 50x
+Link: /country/{cid}/location/{lid} (self)
+Link: /country/{cid}/location (list)
+Link (authorized users only): /country/{cid}/location (create)
+Link (authorized users only): /country/{cid}/location/{lid} (update)
+Link (authorized users only): /country/{cid}/location/{lid} (delete)
+
+HTTP method: PUT (update)
+Status codes: 204, 40x, 50x
+
+HTTP method: DELETE (delete)
+Status codes: 204, 40x, 50x

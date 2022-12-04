@@ -1,0 +1,39 @@
+/tour – the list of tours
+[{...}, {...}, {...}, ...]
+
+/tour/{tid} – a specific tour
+{
+    tid: String,
+    name: String,
+    location: Location,
+    customers: Customer[],
+}
+
+/tour/{tid}/customer – the customers of the specific tour
+[{...}, {...}, {...}, ...]
+
+/tour/{tid}/customer/{cid} – the specific customer of the specific tour
+{
+    cid: String,
+    name: String,
+    surname: String,
+}
+
+/country – the list of countries
+[{...}, {...}, {...}, ...]
+
+/country/{cid} – a specific country
+{
+    cid: String,
+    name: String,
+    locations: Location[],
+}
+
+/country/{cid}/location – the locations of the specific country
+[{...}, {...}, {...}, ...]
+
+/country/{cid}/location/{lid} – the specific location of the specific country
+{
+    lid: String,
+    name: String,
+}
