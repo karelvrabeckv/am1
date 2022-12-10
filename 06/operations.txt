@@ -17,7 +17,7 @@ Link: /tour (list)
 Link: /tour/{tid} (delete)
 
 HTTP method: DELETE (delete)
-Status codes: 200, 40x, 50x
+Status codes: 202, 204, 40x, 50x
 
 ========================================
 /deletion – the list of deletions

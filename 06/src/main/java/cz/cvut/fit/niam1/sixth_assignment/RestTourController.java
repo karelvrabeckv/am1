@@ -45,17 +45,19 @@ public class RestTourController {
 
     @DeleteMapping("/{tid}")
     public HttpEntity<String> deleteTour(@PathVariable String tid, @RequestHeader(required = false, name = "x-authorization") String password) {
-        String message;
-
-        if (password != null) {
-            repository.deleteTourAsOperator(tid);
-            message = "The record was permanently deleted.";
-        } else {
+        // delete tour as user
+        if (password == null) {
             String deletionId = repository.deleteTourAsUser(tid);
-            message = "You can track your request here: /deletion/" + deletionId;
+            String message = "Your request is being processed.";
+
+            return ResponseEntity.status(HttpStatus.ACCEPTED).header("Location", "/deletion/" + deletionId).body(message);
         }
 
-        return ResponseEntity.status(HttpStatus.OK).body(message);
+        // delete tour as operator
+        repository.deleteTourAsOperator(tid);
+        String message = "The record was permanently deleted.";
+
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).body(message);
     }
 
 }
