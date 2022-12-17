@@ -7,5 +7,5 @@
 * xref:05/README.md[]
 * xref:06/README.md[]
 * xref:07/README.md[]
-* xref:08/index#[]
-* xref:09/index#[]
+* xref:08/README.md[]
+* xref:09/README.md[]
